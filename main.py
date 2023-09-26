@@ -1,7 +1,9 @@
 class Statement:
 
+    '''   IN BUILD!    '''
+
     def __init__(self) -> None:
-        pass
+        textfile = ''
 
     def menu():
         print('''Hi! Pick what would You like to do:
