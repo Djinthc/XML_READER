@@ -1,25 +1,4 @@
-class Statement:
-
-    '''   IN BUILD!    '''
-
-    def __init__(self) -> None:
-        textfile = ''
-
-    def menu():
-        print('''Hi! Pick what would You like to do:
-              
-                1. Load Statement
-                2. Print Statement
-                3. Save Statement to file
-                0. Exit''')
-
-    def pick_command():
-        '''Taking command and checking if it is a number'''
-        try:
-            command = int(input('Select :   '))
-        except:
-            print('Wrong choice! Pick a number corresponding with menu.')
-            Statement.pick_command()
+from statement_class import Statement
 
 
 if __name__ == '__main__':
@@ -30,14 +9,20 @@ if __name__ == '__main__':
     while command != 0:
 
         if command == 1:
-            Statement.load()
+            Statement().load()
+            Statement.menu()
+            command = Statement.pick_command()
 
         elif command == 2:
-            Statement.print()
+            Statement().print()
+            Statement.menu()
+            command = Statement.pick_command()
 
         elif command == 3:
-            Statement.save()
+            Statement().save()
+            Statement.menu()
+            command = Statement.pick_command()
         
         else:
-            print('wohooho')
+            print('Wrong number. Try again.')
             Statement.pick_command()
