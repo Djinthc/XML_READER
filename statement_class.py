@@ -1,4 +1,5 @@
 from pathlib import Path
+
 class Statement:
 
     '''   IN BUILD!    '''
@@ -6,6 +7,8 @@ class Statement:
 
     def __init__(self):
         pass
+
+        
 
 
     def menu():
@@ -43,6 +46,7 @@ class Statement:
             file_path = current_folder/f'files/{filename}'
             with open(file_path, "r") as file:
                 Statement.xmlfile = file.read()
+            print('File has been successfully loaded.')
             return 
         except:
             print('Loading went wrong. Make sure statement file name is correct. Try again')
@@ -55,4 +59,8 @@ class Statement:
         
 
     def save(self):
-        pass
+        file = str(input('Enter file name: '))
+        with open(file, 'w') as doc:
+            doc.write(Statement.xmlfile)
+        print('File has been saved')
+        return
